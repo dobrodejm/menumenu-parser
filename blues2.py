@@ -2,11 +2,11 @@ import requests
 from bs4 import BeautifulSoup
 import jsonpickle
 import re
+import os
 
 html = requests.get("http://menumenu.sk/blues/onas?_rf=hpr")
 soup = BeautifulSoup(html.text, 'html.parser')
 jsonpickle.set_encoder_options('json', ensure_ascii=False)
-
 
 class Den:
     weekday = ""
@@ -51,5 +51,8 @@ for day in all_days:
     print(current_den.__dict__)
     final_all_days.append(current_den)
 
-with open("C:\\Users\\rkas\\Desktop\\menumenu-parser\\tyzden.json","w", encoding='utf-8') as tyzden:
+dir_path = os.getcwd()
+new_file_path = os.path.join(dir_path, 'tyzden.json')
+
+with open(new_file_path,"w", encoding='utf-8') as tyzden:
     tyzden.write(jsonpickle.encode(final_all_days, unpicklable=False, indent=4))
