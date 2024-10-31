@@ -3,7 +3,8 @@ A python parser developed for myself, parsing the slovak [menumenu.sk](https://m
 This cut down the weekly processing time from 30-40 minutes down to between 5 and 10.
 
 ## Potential downside:  
-If the site owners at menumenu decide to change any of the html elements, the script breaks. The script was created and tested 28 - November - 2021.
+If the site owners at menumenu decide to change any of the html elements, the script breaks. The script was created and tested 28 - November - 2021.  
+Still works great October - 2024
 
 ## Potential upgrades:
 Script works just as expected, automating a boring manual process. 🤷‍♀️
