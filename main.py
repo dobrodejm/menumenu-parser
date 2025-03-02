@@ -5,7 +5,10 @@ import jsonpickle
 import re
 import os
 
-response = requests.get("http://menumenu.sk/blues/onas?_rf=hpr")
+# Update this line with the URL to your restaurant
+RESTAURANT_URL="http://menumenu.sk/blues"
+
+response = requests.get(RESTAURANT_URL)
 html_to_soup = BeautifulSoup(response.text, 'html.parser')
 jsonpickle.set_encoder_options('json', ensure_ascii=False)
 
